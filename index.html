@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <section class="mt-24 p-10">
+      <div class="shapes m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <!-- shape 1 -->
+        <div
+          class="shape flex flex-col justify-center items-center gap-3 rounded-md py-10 px-5 shadow-md"
+        >
+          <img src="./images/triangle.png" alt="" />
+          <h1 class="text-2xl font-bold text-blue-600">Triangle</h1>
+          <h2 class="text-base font-semibold">Area(A)=0.5 x b x h</h2>
+          <p class="flex gap-3 items-center">
+            <input
+              id="triangle-base"
+              placeholder="base"
+              type="number"
+              class="bg-slate-300 rounded w-24 p-2"
+            /><span>Cm</span>
+            <input
+              id="triangle-height"
+              placeholder="height"
+              type="number"
+              class="bg-slate-300 rounded w-24 p-2"
+            /><span>Cm</span>
+          </p>
+          <p class="text-base font-bold text-yellow-600">
+            Total Area : <span id="triangle-result"></span>CM
+          </p>
+          <button
+            id="triangle-btn"
+            class="btn uppercase tracking-widest bg-blue-600 hover:bg-blue-900 text-white text-base font-medium block rounded w-full p-4"
+          >
+            calculate
+          </button>
+        </div>
+        <!-- shape 2-->
+        <div
+          class="shape flex flex-col justify-center items-center gap-3 rounded-md py-10 px-5 shadow-md"
+        >
+          <img src="./images/rectangle.png" alt="" />
+          <h1 class="text-2xl font-bold text-blue-600">Rectangle</h1>
+          <h2 class="text-base font-semibold">Area(A)=w x l</h2>
+          <p class="flex gap-3 items-center">
+            <input
+              id="rectangle-base"
+              placeholder="W"
+              type="number"
+              class="bg-slate-300 rounded w-24 p-2"
+            /><span>Cm</span>
+            <input
+              id="rectangle-height"
+              placeholder="l"
+              type="number"
+              class="bg-slate-300 rounded w-24 p-2"
+            /><span>Cm</span>
+          </p>
+          <p class="text-base font-bold text-blue-600">
+            Total Area : <span id="rectangle-result"></span>CM
+          </p>
+          <button
+            id="rectangle-btn"
+            class="btn uppercase tracking-widest bg-blue-600 hover:bg-blue-900 text-white text-base font-medium block rounded w-full p-4"
+          >
+            calculate
+          </button>
+        </div>
+        <!-- shape 3-->
+        <div
+          class="shape flex flex-col justify-center items-center gap-3 rounded-md py-10 px-5 shadow-md"
+        >
+          <img src="./images/parallelogram.png" alt="" class="mb-5" />
+          <h1 class="text-2xl font-bold text-blue-600">Parallelogram</h1>
+          <h2 class="text-base font-semibold">Area(A)= b x h</h2>
+          <p class="flex gap-3 items-center">
+            <input
+              id="Parallelogram-base"
+              placeholder="base"
+              type="number"
+              class="bg-slate-300 rounded w-24 p-2"
+            /><span>Cm</span>
+            <input
+              id="Parallelogram-height"
+              placeholder="height"
+              type="number"
+              class="bg-slate-300 rounded w-24 p-2"
+            /><span>Cm</span>
+          </p>
+          <p class="text-base font-bold text-green-600">
+            Total Area : <span id="Parallelogram-result"></span>CM
+          </p>
+          <button
+            id="Parallelogram-btn"
+            class="btn uppercase tracking-widest bg-blue-600 hover:bg-blue-900 text-white text-base font-medium block rounded w-full p-4"
+          >
+            calculate
+          </button>
+        </div>
+        <!-- shape 4-->
+        <div
+          id="empty-box"
+          class="shape flex flex-col items-center gap-3 rounded-md py-10 px-5 shadow-md row-span-2 font-bold max-[350px]:row-start-1	 "
+        >
+          <h1>Area Calculation</h1>
+        </div>
+        <!-- shape 5-->
+        <div
+          class="shape flex flex-col justify-center items-center gap-3 rounded-md py-10 px-5 shadow-md"
+        >
+          <img src="./images/rhombus.png" alt="" />
+          <h1 class="text-2xl font-bold text-blue-600">Rhombus</h1>
+          <h2 class="text-base font-semibold">
+            Area(A)=0.5 x d<sub>1</sub> x d<sub>2</sub>
+          </h2>
+          <p class="flex gap-3 items-center">
+            <input
+              id="rhombus-base"
+              placeholder="base"
+              type="number"
+              class="bg-slate-300 rounded w-24 p-2"
+            /><span>Cm</span>
+            <input
+              id="rhombus-height"
+              placeholder="height"
+              type="number"
+              class="bg-slate-300 rounded w-24 p-2"
+            /><span>Cm</span>
+          </p>
+          <p class="text-base font-bold text-yellow-900">
+            Total Area : <span id="rhombus-result"></span>CM
+          </p>
+          <button
+            id="rhombus-btn"
+            class="btn uppercase tracking-widest bg-blue-600 hover:bg-blue-900 text-white text-base font-medium block rounded w-full p-4"
+          >
+            calculate
+          </button>
+        </div>
+        <!-- shape 6-->
+        <div
+          class="shape flex flex-col justify-center items-center gap-3 rounded-md py-10 px-5 shadow-md"
+        >
+          <img src="./images/pentagon.png" alt="" />
+          <h1 class="text-2xl font-bold text-blue-600">Pentagon</h1>
+          <h2 class="text-base font-semibold">Area(A)=0.5 x b x b</h2>
+          <p class="flex gap-3 items-center">
+            <input
+              id="pentagon-base"
+              placeholder="base"
+              type="number"
+              class="bg-slate-300 rounded w-24 p-2"
+            /><span>Cm</span>
+            <input
+              id="pentagon-height"
+              placeholder="height"
+              type="number"
+              class="bg-slate-300 rounded w-24 p-2"
+            /><span>Cm</span>
+          </p>
+          <p class="text-base font-bold text-pink-600">
+            Total Area : <span id="pentagon-result"></span>CM
+          </p>
+          <button
+            id="pentagon-btn"
+            class="btn uppercase tracking-widest bg-blue-600 hover:bg-blue-900 text-white text-base font-medium block rounded w-full p-4"
+          >
+            calculate
+          </button>
+        </div>
+        <!-- shape 7-->
+        <div
+          class="shape flex flex-col justify-center items-center gap-3 rounded-md py-10 px-5 shadow-md"
+        >
+          <img src="./images/ellipse.png" alt="" />
+          <h1 class="text-2xl font-bold text-blue-600">Ellipse</h1>
+          <h2 class="text-base font-semibold">Area(A)=πab</h2>
+          <p class="flex gap-3 items-center">
+            <input
+              id="ellipse-base"
+              placeholder="base"
+              type="number"
+              class="bg-slate-300 rounded w-24 p-2"
+            /><span>Cm</span>
+            <input
+              id="ellipse-height"
+              placeholder="height"
+              type="number"
+              class="bg-slate-300 rounded w-24 p-2"
+            /><span>Cm</span>
+          </p>
+          <p class="text-base font-bold text-gray-600">
+            Total Area : <span id="ellipse-result"></span>CM
+          </p>
+          <button
+            id="ellipse-btn"
+            class="btn uppercase tracking-widest bg-blue-600 hover:bg-blue-900 text-white text-base font-medium block rounded w-full p-4 mt-2.5"
+          >
+            calculate
+          </button>
+        </div>
+      </div>
+    </section>
+    
+
+    <script src="index.js"></script>
+  </body>
+</html>
